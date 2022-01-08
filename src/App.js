@@ -1,17 +1,32 @@
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "./App.css";
-import { counterAction } from "./redux/action/actions";
-
-export default () => {
-  const count = useSelector((state) => state.counter.count);
-  const dispatch = useDispatch();
-
-  return (
-    <>
-      <h2>{count}</h2>
-      <button onClick={() => dispatch(counterAction.increment())}>+</button>
-      <button onClick={() => dispatch(counterAction.decrement())}>-</button>
-      <button onClick={() => dispatch(counterAction.delete())}>delete</button>
-    </>
-  );
+const initialState = {
+  name: "salom",
 };
+export default function App() {
+  const dispach = useDispatch();
+  const [text, setText] = useState("");
+  const value = useSelector((state) => state.name);
+  const ChangHandle = (e) => setText(e.target.value);
+  const OnKeyPres = (e) => {
+    const valueText = e.target.value.trim();
+    if (e.key == "Enter") {
+      dispach({ type: "Enter", payload: valueText });
+      setText("");
+    }
+  };
+  // console.log(text);
+  return (
+    <div>
+      <h2>{value}</h2>
+      <input
+        type="text"
+        value={text}
+        onChange={ChangHandle}
+        onKeyPress={OnKeyPres}
+      />
+      <button>ok</button>
+      {/* <button onClick={() => dispach({ type: "uchir" })}>o'chir</button> */}
+    </div>
+  );
+}
