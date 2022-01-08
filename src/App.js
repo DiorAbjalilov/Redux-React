@@ -6,9 +6,10 @@ export default function App() {
 
   return (
     <div>
-      <h2>
-        {count} <button onClick={() => dispach({ type: "qush" })}>sfos</button>
-      </h2>
+      <h2>{count}</h2>
+      <button onClick={() => dispach({ type: "qush" })}>qo'sh</button>
+      <button onClick={() => dispach({ type: "ayir" })}>ayir</button>
+      <button onClick={() => dispach({ type: "uchir" })}>o'chir</button>
     </div>
   );
 }

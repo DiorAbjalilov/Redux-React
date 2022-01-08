@@ -9,6 +9,16 @@ export default (state = initialState, action) => {
         ...state,
         count: state.count + 1,
       };
+    case "ayir":
+      return {
+        ...state,
+        count: state.count - 1,
+      };
+    case "uchir":
+      return {
+        ...state,
+        count: 0,
+      };
     default:
       return state;
   }
