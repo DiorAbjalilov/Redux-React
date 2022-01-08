@@ -9,12 +9,8 @@ export default () => {
   return (
     <>
       <h2>{count}</h2>
-      <button onClick={() => dispatch(counterAction.increment())}>
-        increment
-      </button>
-      <button onClick={() => dispatch(counterAction.decrement())}>
-        decrement
-      </button>
+      <button onClick={() => dispatch(counterAction.increment())}>+</button>
+      <button onClick={() => dispatch(counterAction.decrement())}>-</button>
       <button onClick={() => dispatch(counterAction.delete())}>delete</button>
     </>
   );
