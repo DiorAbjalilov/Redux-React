@@ -1,32 +1,22 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 const initialState = {
-  name: "salom",
+  counter:0,
 };
 export default function App() {
+  const [value, setValue]=useState('')
   const dispach = useDispatch();
-  const [text, setText] = useState("");
-  const value = useSelector((state) => state.name);
-  const ChangHandle = (e) => setText(e.target.value);
-  const OnKeyPres = (e) => {
-    const valueText = e.target.value.trim();
-    if (e.key == "Enter") {
-      dispach({ type: "Enter", payload: valueText });
-      setText("");
-    }
-  };
-  // console.log(text);
+  const counter = useSelector(state=>state);
+  console.log(counter);
+  const HandlerClick=()=>{
+    return dispach({ type: "Increment", payload: value})
+  }
   return (
     <div>
-      <h2>{value}</h2>
-      <input
-        type="text"
-        value={text}
-        onChange={ChangHandle}
-        onKeyPress={OnKeyPres}
-      />
-      <button>ok</button>
-      {/* <button onClick={() => dispach({ type: "uchir" })}>o'chir</button> */}
+      <input type='text' onChange={(e)=>setValue(e.target.value)} value={value} />
+      <button onClick={HandlerClick}>Enter</button>
+      {/* <button onClick={() => dispach({ type: "Clear" })}>Clear</button> */}
+      {/* <button onClick={() => dispach({ type: "Decrement" })}>Decrement</button> */}
     </div>
   );
 }
