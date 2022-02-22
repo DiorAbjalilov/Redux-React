@@ -1,25 +1,24 @@
-const initialState = {
-  count: 0,
-};
+const initialState = [];
 
-export default (state = initialState, action) => {
+export default (state=initialState, action, payload)=> {
   switch (action.type) {
-    case "qush":
-      return {
+    case "Increment":
+      return ([
         ...state,
-        count: state.count + 1,
-      };
-    case "ayir":
-      return {
-        ...state,
-        count: state.count - 1,
-      };
-    case "uchir":
-      return {
-        ...state,
-        count: 0,
-      };
+        {
+        name:action.payload
+      }]);
+    // case "Decrement":
+    //   return {
+    //     ...state,
+    //     counter: state.counter + 1,
+    //   };
+    // case "Clear":
+    //   return {
+    //     ...state,
+    //     counter: 0,
+    //   };
     default:
       return state;
   }
-};
+}
