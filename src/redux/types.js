@@ -3,8 +3,3 @@ export const counter={
     DECREMENT:"DECREMENT",
     CLEAR:"CLEAR",
 }
-// export const counter = {
-//     INCREMENT: "APP/COUNTER/INCREMENT",
-//     DECREMENT: "APP/COUNTER/DECREMENT",
-//     DELETE: "APP/COUNTER/DELETE",
-//   };

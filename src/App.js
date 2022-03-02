@@ -7,9 +7,9 @@ const App = () => {
   return (
     <>
       <h1>counter: {count}</h1>
-      <button onClick={()=>dispatch(counterAction.increment)}>Increment</button>
-      <button onClick={()=>dispatch(counterAction.clear)}>Clear</button>
-      <button onClick={()=>dispatch(counterAction.decrement)}>Decrement</button>
+      <button onClick={()=>dispatch(counterAction.increment())}>Increment</button>
+      <button onClick={()=>dispatch(counterAction.clear())}>Clear</button>
+      <button onClick={()=>dispatch(counterAction.decrement())}>Decrement</button>
     </>
   )
 }
