@@ -1,15 +1,9 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { counterAction } from './redux/action'
+import './App.css'
 const App = () => {
-  const count =useSelector(state=>state.counter.count)
-  const dispatch=useDispatch()
   return (
     <>
-      <h1>counter: {count}</h1>
-      <button onClick={()=>dispatch(counterAction.increment())}>Increment</button>
-      <button onClick={()=>dispatch(counterAction.clear())}>Clear</button>
-      <button onClick={()=>dispatch(counterAction.decrement())}>Decrement</button>
+      <h1>hello</h1>
     </>
   )
 }
